@@ -1,0 +1,552 @@
+/* Reset default margins and ensure full viewport height */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    /* Apply Roboto font with fallback */
+    background: #fff;
+    /* Dark background like Zune Daalim */
+    color: #fff;
+    overscroll-behavior: none;
+    /* Prevent overscroll bounce */
+    height: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 30px 5px 5px 5px;
+    border-radius: 5px;
+    position: relative;
+    color: #4A4A4A;
+}
+
+footer {
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px;
+    position: relative;
+    height: 20vh;
+}
+
+/* Spacer to create scrollable space */
+.spacer {
+    height: 80vh;
+    background: #fff;
+}
+
+/* Hero section styling */
+.hero-section {
+    min-height: 50vh;
+    /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    position: sticky;
+    top: 0;
+    /* Stick to top of viewport */
+    z-index: 10;
+    /* Ensure sections stack correctly */
+    border-top-left-radius: 40px;
+    /* Curve top-left corner */
+    border-top-right-radius: 40px;
+    /* Curve top-right corner */
+    border-bottom-left-radius: 0;
+    /* Keep bottom straight */
+    border-bottom-right-radius: 0;
+    /* Keep bottom straight */
+    box-shadow: 0 -4px 10px rgba(255, 255, 255, 0.1);
+    /* Subtle shadow */
+    overflow: hidden;
+    /* Prevent scrollable content overflow */
+}
+
+/* Content wrapper for layout */
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Scrollable content */
+.scrollable-content {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 15px;
+    width: 40%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+}
+
+/* Font styling for scrollable content */
+.scrollable-content h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    /* Bold for headings */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.scrollable-content p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    /* Regular for body */
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Scrollbar styling */
+.scrollable-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+    background: #bbb;
+}
+
+/* Animated element (e.g., image) */
+.animated-element {
+    width: 70%;
+    text-align: center;
+}
+
+.animated-element img {
+    max-width: 100%;
+    height: auto;
+    transform: scale(0.8);
+    opacity: 0.5;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    will-change: transform, opacity;
+}
+
+/* Visible state for animations */
+.hero-section.visible .scrollable-content,
+.hero-section.visible .animated-element img {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.mainContent {
+    text-align: center;
+    color: #4A4A4A;
+}
+
+.myName {
+    font-family: 'Roboto', sans-serif;
+    color: #F4A261;
+    display: flex;
+    justify-content: center;
+    font-size: 8vw;
+    font-weight: 500;
+
+}
+
+.logo {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    line-height: .9;
+    display: flex;
+    justify-content: center;
+}
+
+.myDesign {
+    font-size: 8vw;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #4A4A4A;
+}
+
+.tagline {
+    font-size: 8vw;
+    color: #4A4A4A;
+    font-weight: 500;
+}
+
+.tagline2 {
+    font-size: 5vw;
+    color: #fff;
+    font-weight: 500;
+}
+
+.taglineContent {
+    font-size: 2vw;
+    color: #fff;
+    font-weight: 500;
+    justify-content: center;
+
+}
+
+.taglineContent2 {
+    font-size: 1vw;
+    color: #fff;
+    font-weight: 500;
+    text-align: left;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+}
+
+
+.hamburger-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.hamburger-icon {
+    font-size: 24px;
+    cursor: pointer;
+    color: #4A4A4A;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #F4A261;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.menu.active {
+    display: block;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.menu ul li {
+    margin: 5px 0;
+}
+
+.menu ul li a {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #4A4A4A;
+    display: block;
+    padding: 5px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+}
+
+.social-Icon a {
+    position: relative;
+    text-decoration: none;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.socialIconsCon {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+ul {
+    display: block;
+    list-style-type: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}
+
+.flex-container {
+    display: flex;
+
+}
+
+.one {
+    flex: 1 1 auto;
+}
+
+.two {
+    flex: 1 1 auto;
+}
+
+.three {
+    flex: 1 1 auto;
+}
+
+.avatar-container {
+    position: fixed;
+    top: 80px;
+    left: 400px;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    /* Confine avatar movement */
+    z-index: 1000;
+    /* Ensure it stays above other content */
+}
+
+.ai-bot {
+    position: absolute;
+    /* Allow movement within container */
+    width: 100px;
+    /* Half the previous size */
+    padding: 0;
+    text-align: center;
+    /*box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);*/
+    /* Floating effect */
+    animation: float 4s ease-in-out infinite;
+    /* Vertical floating animation */
+    z-index: 1001;
+    /* Above container */
+    transition: left 2s ease, top 2s ease;
+    /* Smooth movement within area */
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.bot-image {
+    width: 70px;
+    /* Half the previous size */
+    height: auto;
+    border-radius: 0;
+    /* No rounding */
+}
+
+.input-bubble {
+    position: absolute;
+    top: -10px;
+    /* Position above the avatar */
+    right: -20px;
+    /* Position to the right of the avatar */
+    width: 100px;
+    /* Adjusted for smaller avatar */
+    padding: 5px;
+    background: #F5F5F5;
+    /* White bubble */
+    color: #4A4A4A;
+    /* Gray text */
+    border-radius: 10px;
+    text-align: left;
+    z-index: 1002;
+    /* Above avatar */
+    font-size: 12px;
+    /* Smaller text for bubble */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.input-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    /* Pointer at the bottom of the bubble, pointing up */
+    left: 90%;
+    /* Adjusted to point from the right side */
+    transform: translateX(-50%);
+    border-width: 5px 5px 0;
+    /* Smaller pointer */
+    border-style: solid;
+    border-color: #F5F5F5 transparent transparent;
+}
+
+#bot-input {
+    width: 100%;
+    padding: 3px;
+    border: none;
+    background: transparent;
+    color: #4A4A4A;
+    outline: none;
+    font-size: 12px;
+    /* Smaller text */
+    cursor: text;
+    /* Allow user interaction */
+}
+
+/* Style for initial text to look like avatar's speech */
+#bot-input[readonly] {
+    background: #F5F5F5;
+    /* Match bubble background */
+    color: #4A4A4A;
+    /* Match bubble text */
+    font-style: italic;
+    /* Indicate it's a message */
+    cursor: default;
+    /* Prevent cursor change when readonly */
+}
+
+/* Remove focus outline and readonly when user starts typing */
+#bot-input:focus {
+    readonly: false;
+    /* Remove readonly on focus */
+    background: transparent;
+    /* Reset background */
+    font-style: normal;
+    /* Reset font style */
+}
+
+#bot-response {
+    margin-top: 5px;
+    text-align: left;
+    /* Black text for responses */
+    position: relative;
+    z-index: 1002;
+    /* Above avatar */
+    font-size: 12px;
+    /* Smaller text */
+
+    font-style: italic;
+    padding: 5px;
+    background: transparent;
+    /* White bubble */
+
+    /* Gray text */
+    border-radius: 10px;
+    text-align: left;
+
+}
+
+.resp-hl {
+    background: #F5F5F5 !important;
+    /* White bubble */
+    color: #4A4A4A;
+    /* Gray text */
+    border-radius: 10px;
+    text-align: left;
+
+    font-size: 12px;
+    /* Smaller text for bubble */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .spacer {
+        height: 50vh;
+
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .scrollable-content,
+    .animated-element {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .scrollable-content {
+        max-height: 5vh;
+    }
+
+    .hero-section {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+
+    .scrollable-content h2 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 8vw;
+
+    }
+
+    .tagline2 {
+        font-size: 5vw;
+        color: #fff;
+        font-weight: 500;
+    }
+
+    .taglineContent {
+        font-size: 4vw;
+
+    }
+
+    .taglineContent2 {
+        font-size: 4vw;
+
+    }
+
+    .myName {
+        font-size: 15vw;
+    }
+
+    .logo {
+        font-size: 12vw;
+    }
+
+    .avatar-container {
+        top: 50px;
+        left: 20px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .ai-bot {
+        width: 50px;
+        /* Further adjusted for mobile */
+    }
+
+    .bot-image {
+        width: 50px;
+    }
+
+    .input-bubble {
+        width: 80px;
+        top: -8px;
+        right: -8px;
+    }
+
+    #bot-input {
+
+        font-size: 9px;
+
+    }
+}
